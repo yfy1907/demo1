@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:src="@drawable/avatar" />
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_tel"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:background="@drawable/et_tel"
+                android:gravity="center"
+                android:hint="请输入手机号码"
+                android:inputType="number"
+                android:paddingLeft="50dp"
+                android:paddingRight="15dp"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/verification_code"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/verification_code"
+                android:gravity="center_vertical"
+                android:hint="获取验证码"
+                android:paddingLeft="6dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/tel_num"
+            android:gravity="center"
+            android:hint="请设置您的账户密码"
+            android:inputType="textPassword"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/et_nickname"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/tel_num"
+            android:gravity="center"
+            android:hint="请设置您的昵称"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/et_receive_code"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/tel_num"
+            android:gravity="center"
+            android:hint="您收到的验证码"
+            android:inputType="number"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/btn_join"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/btn_join"
+            android:gravity="center"
+            android:text="加    入" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="ZWZ.IM"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+</RelativeLayout>

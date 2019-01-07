@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context="zwz.im.androidapp.MainActivity">
+
+    <include layout="@layout/titleview_layout" />
+
+
+    <Button
+        android:id="@+id/btn_webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="webview使用" />
+
+    <Button
+        android:id="@+id/btn_loadingview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加载框的使用" />
+
+    <Button
+        android:id="@+id/btn_newsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="网络请求的使用" />
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="版本更新的使用" />
+
+</LinearLayout>
