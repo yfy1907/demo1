@@ -15,7 +15,7 @@ import android.widget.RadioGroup;
 
 import zwz.im.androidapp.R;
 import zwz.im.androidapp.activity.base.BaseActivity;
-import zwz.im.androidapp.fragment.BaseFragmentNewVocalCards;
+import zwz.im.androidapp.fragment.BaseFragmentHome;
 import zwz.im.androidapp.fragment.FragmentFactory;
 import zwz.im.androidapp.widget.view.NoScrollViewPager;
 
@@ -45,7 +45,7 @@ public class NewVocalCordsActivity extends BaseActivity {
 
         mAdapter = new MyAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapter);
-        mViewPager.setCurrentItem(1, false);
+        mViewPager.setCurrentItem(2, false);
 
         // 底栏标签切换监听
         rgGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -79,7 +79,7 @@ public class NewVocalCordsActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-                BaseFragmentNewVocalCards fragment = FragmentFactory.createFragment(position);
+                BaseFragmentHome fragment = FragmentFactory.createFragment(position);
                 // 开始加载数据
                 //fragment.loadData();
             }
@@ -114,7 +114,7 @@ public class NewVocalCordsActivity extends BaseActivity {
         // 返回当前页面位置的fragment对象
         @Override
         public Fragment getItem(int position) {
-            BaseFragmentNewVocalCards fragment = FragmentFactory.createFragment(position);
+            BaseFragmentHome fragment = FragmentFactory.createFragment(position);
             return fragment;
         }
 

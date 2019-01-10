@@ -17,7 +17,7 @@ import zwz.im.androidapp.adapter.RecyclerAdapter;
 import zwz.im.androidapp.model.Fruit;
 
 
-public class VoiceFragment extends BaseFragmentNewVocalCards {
+public class VoiceFragment extends BaseFragmentHome {
 
     /**
      * 标志位，标志已经初始化完成

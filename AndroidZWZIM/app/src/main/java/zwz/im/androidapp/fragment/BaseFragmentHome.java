@@ -3,7 +3,7 @@ package zwz.im.androidapp.fragment;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
-public abstract class BaseFragmentNewVocalCards extends Fragment {
+public abstract class BaseFragmentHome extends Fragment {
     /**
      * Fragment当前状态是否可见
      */

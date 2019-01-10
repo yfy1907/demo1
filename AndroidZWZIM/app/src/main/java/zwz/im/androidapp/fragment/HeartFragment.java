@@ -13,7 +13,7 @@ import android.widget.ImageView;
 
 import zwz.im.androidapp.R;
 
-public class HeartFragment extends BaseFragmentNewVocalCards implements View.OnClickListener {
+public class HeartFragment extends BaseFragmentHome implements View.OnClickListener {
 
     /**
      * 标志位，标志已经初始化完成

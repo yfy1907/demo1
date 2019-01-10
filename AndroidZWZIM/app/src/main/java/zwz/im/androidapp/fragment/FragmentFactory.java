@@ -2,15 +2,13 @@ package zwz.im.androidapp.fragment;
 
 import java.util.HashMap;
 
-import zwz.im.androidapp.activity.base.BaseFragment;
-
 public class FragmentFactory {
 
-    private static HashMap<Integer, BaseFragmentNewVocalCards> mFragmentMap = new HashMap<Integer, BaseFragmentNewVocalCards>();
+    private static HashMap<Integer, BaseFragmentHome> mFragmentMap = new HashMap<Integer, BaseFragmentHome>();
 
-    public static BaseFragmentNewVocalCards createFragment(int pos) {
+    public static BaseFragmentHome createFragment(int pos) {
         // 先从集合中取, 如果没有,才创建对象, 提高性能
-        BaseFragmentNewVocalCards fragment = mFragmentMap.get(pos);
+        BaseFragmentHome fragment = mFragmentMap.get(pos);
 
         if (fragment == null) {
             switch (pos) {

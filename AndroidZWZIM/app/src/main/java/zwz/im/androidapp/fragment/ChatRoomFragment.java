@@ -31,7 +31,7 @@ import zwz.im.androidapp.model.Fruit;
 import zwz.im.androidapp.model.Msg;
 
 
-public class ChatRoomFragment extends BaseFragmentNewVocalCards implements View.OnClickListener {
+public class ChatRoomFragment extends BaseFragmentHome implements View.OnClickListener {
 
     /**
      * 标志位，标志已经初始化完成

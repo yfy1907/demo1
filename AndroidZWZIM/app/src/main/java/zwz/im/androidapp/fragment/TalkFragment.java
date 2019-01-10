@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import zwz.im.androidapp.R;
 
-public class TalkFragment extends BaseFragmentNewVocalCards {
+public class TalkFragment extends BaseFragmentHome {
 
     /**
      * 标志位，标志已经初始化完成
