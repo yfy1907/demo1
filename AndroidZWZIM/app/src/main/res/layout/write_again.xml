@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="@drawable/finish_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/heart_voice_bg"
+            android:drawableRight="@drawable/life"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="生活"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/heart_voice_bg"
+            android:drawableRight="@drawable/love"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="爱好"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/heart_voice_bg"
+            android:drawableRight="@drawable/relationship"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="人际关系"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/heart_voice_bg"
+            android:drawableRight="@drawable/share"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="分享"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/heart_voice_bg"
+            android:drawableRight="@drawable/emotion"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="情感"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/heart_voice_bg"
+            android:drawableRight="@drawable/work"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="工作"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/heart_voice_bg"
+            android:drawableRight="@drawable/study"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="学业"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/heart_voice_bg"
+            android:drawableRight="@drawable/family"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="家庭"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/heart_voice_bg"
+            android:drawableRight="@drawable/dream"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="理想"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/heart_voice_bg"
+            android:drawableRight="@drawable/all"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="综合"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

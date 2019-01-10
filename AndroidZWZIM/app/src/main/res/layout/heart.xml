@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="心室"
+            android:layout_gravity="center"
+            android:textColor="#FDCB78"
+            android:gravity="center"
+            android:textSize="30sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/heart_avatar_small"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginLeft="100dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/heart_avatar_small" />
+
+            <ImageView
+                android:id="@+id/heart_avatar_big"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/heart_avatar_big" />
+
+            <ImageView
+                android:id="@+id/heart_name"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:visibility="gone"
+                android:src="@drawable/heart_name" />
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_tel"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:background="@drawable/et_tel"
+                android:gravity="center"
+                android:hint=""
+                android:inputType="number"
+                android:paddingLeft="50dp"
+                android:paddingRight="15dp"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/pwd_code"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:background="@drawable/verification_code"
+                android:gravity="center_vertical"
+                android:text="独立密码进入"
+                android:textColor="#000"
+                android:paddingLeft="6dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_pwd"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/heart_pwd"/>
+
+        <ImageView
+            android:id="@+id/iv_no_pwd"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/no_pwd"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

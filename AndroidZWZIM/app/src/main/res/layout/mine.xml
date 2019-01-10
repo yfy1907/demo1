@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:michael="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/translucent"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:src="@drawable/chat_left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:drawableRight="@drawable/edit"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:text="心的相遇"
+            android:textColor="#000"
+            android:textSize="23sp" />
+
+        <ImageView
+            android:id="@+id/iv_setting"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="6dp"
+            android:gravity="center"
+            android:src="@drawable/setting" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:drawableRight="@drawable/edit"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:text="简介：用聊天的力量温暖世界!"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/translucent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="开导他人"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+
+            <zwz.im.androidapp.widget.view.CircleProgressBar
+                android:id="@+id/cpb_one"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                michael:circleColor="#000"
+                michael:radius="50dp"
+                michael:ringBgColor="@color/greyishWhite"
+                michael:ringColor="#000"
+                michael:strokeWidth="1dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="50dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="个人心声"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <zwz.im.androidapp.widget.view.CircleProgressBar
+                android:id="@+id/cpb_two"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                michael:circleColor="#000"
+                michael:radius="50dp"
+                michael:ringBgColor="@color/greyishWhite"
+                michael:ringColor="#000"
+                michael:strokeWidth="1dp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/translucent"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="我的心声"
+        android:textColor="#000"
+        android:textSize="22sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="6dp"
+        android:fitsSystemWindows="true" />
+
+</LinearLayout>

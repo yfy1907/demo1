@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+    <zwz.im.androidapp.widget.view.NoScrollViewPager
+        android:id="@+id/vp_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true" />
+
+    <ImageView
+        android:id="@+id/iv_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rg_bottom"/>
+
+    <RadioGroup
+        android:id="@+id/rg_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:visibility="visible"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_talk"
+            android:checked="true"
+            style="@style/Bottom_Tab_Style"
+            android:drawableBottom="@drawable/talk" />
+
+        <RadioButton
+            android:id="@+id/rb_voice"
+            style="@style/Bottom_Tab_Style"
+            android:drawableBottom="@drawable/voice" />
+
+        <RadioButton
+            android:id="@+id/rb_heart"
+            style="@style/Bottom_Tab_Style"
+            android:drawableBottom="@drawable/heart" />
+
+        <RadioButton
+            android:id="@+id/rb_connect"
+            style="@style/Bottom_Tab_Style"
+            android:drawableBottom="@drawable/connect" />
+
+        <RadioButton
+            android:id="@+id/rb_mine"
+            style="@style/Bottom_Tab_Style"
+            android:drawableBottom="@drawable/me" />
+
+    </RadioGroup>
+</RelativeLayout>
