@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -31,6 +32,8 @@ public class LaunchActivity extends BaseActivity implements ViewPager.OnPageChan
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
+
+        setTranslucentStatus();
 
         ib_start = (Button)findViewById(R.id.guide_ib_start);
         ib_start.setOnClickListener(new View.OnClickListener() {

@@ -3,9 +3,11 @@ package zwz.im.androidapp.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.WindowManager;
 
 import zwz.im.androidapp.MainActivity;
 import zwz.im.androidapp.R;
@@ -36,10 +38,12 @@ public class WelcomeActivity extends BaseActivity {
             }
         }
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        setTranslucentStatus();
         init();
     }
     private void init(){
@@ -62,7 +66,8 @@ public class WelcomeActivity extends BaseActivity {
         finish();//关掉不用的界面
     }
     private  void goGuide(){
-        Intent intent=new Intent(WelcomeActivity.this, GuideActivity.class);
+        Intent intent=new Intent(WelcomeActivity.this, LaunchActivity.class);
+//        Intent intent=new Intent(WelcomeActivity.this, GuideActivity.class);
         startActivity(intent);
         finish();//关掉不用的界面
     }

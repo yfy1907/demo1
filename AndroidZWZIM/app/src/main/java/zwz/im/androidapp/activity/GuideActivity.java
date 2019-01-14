@@ -44,7 +44,7 @@ public class GuideActivity extends BaseActivity implements ViewPager.OnPageChang
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(this);//viewPager实现监听
         //第三个页面获取id
-        views.get(2).findViewById(R.id.btn_main).setOnClickListener(new View.OnClickListener() {
+        views.get(1).findViewById(R.id.btn_main).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent_main2=new Intent(GuideActivity.this, MainActivity.class);

@@ -26,7 +26,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.NewVocalCordsActivity">
+        <activity android:name=".activity.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,12 +38,10 @@
         <activity android:name=".activity.RegisterActivity" ></activity>
         <activity android:name=".activity.SettingActivity" ></activity>
 
-        <activity android:name=".activity.WelcomeActivity" ></activity>
+        <activity android:name=".activity.NewVocalCordsActivity"></activity>
         <activity android:name=".activity.LaunchActivity" ></activity>
         <activity android:name=".activity.GuideActivity" ></activity>
         <activity android:name=".activity.WelcomeVideoActivity" ></activity>
-
-
 
         <activity android:name=".MainActivity" ></activity>
         <activity android:name=".activity.base.BaseWebViewActivity"></activity>
