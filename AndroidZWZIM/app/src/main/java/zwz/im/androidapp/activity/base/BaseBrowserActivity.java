@@ -52,6 +52,8 @@ public class BaseBrowserActivity extends BaseActivity {
     private ImageButton mExit;
     private ImageButton mHome;
     private ImageButton mMore;
+
+
     private Button mGo;
     private EditText mUrl;
 
@@ -439,7 +441,7 @@ public class BaseBrowserActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 //Process.killProcess(Process.myPid());
-                android.os.Process.killProcess(android.os.Process.myPid());
+//                android.os.Process.killProcess(android.os.Process.myPid());
             }
         });
     }

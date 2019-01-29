@@ -6,6 +6,29 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="greyishWhite">#FFF5F3F3</color>
+    <color name="white">#ffffffff</color>
+    <color name="lvse">#ff23ad39</color>
+    <color name="heise">#ff000000</color>
+    <color name="huise">#FFE7E7FB</color>
+    <color name="baise">#ffffffff</color>
+    <color name="hongse">#ffff0000</color>
+    <color name="red">#FF0000</color>
+    <color name="qianlanse">#ffc5dbf2</color>
+    <color name="transparent">#00000000</color>
+    <color name="dialog_btn_line">#cccccc</color>
+    <color name="gray_light">#EEEEEE</color>
+    <color name="grey_light">#FF333333</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="luru_tx_bg">#CDF1FF</color>
+    <color name="luru_top_tx_bg">#BBCBCF</color>
+    <color name="orange">#FEF23A</color>
 
-    <color name="transparent">#FFFFFFFF</color>
+
+    <color name="yellowPeach">#FFFFCD75</color>
+    <color name="status_bar_color">#FFFFCD75</color>
+
+
+
+
+
 </resources>

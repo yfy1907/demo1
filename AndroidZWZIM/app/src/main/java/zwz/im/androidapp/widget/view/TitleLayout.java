@@ -30,7 +30,7 @@ public class TitleLayout extends LinearLayout {
         iv_back.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((Activity) getContext()).finish();
+                // ((Activity) getContext()).finish();
             }
         });
     }

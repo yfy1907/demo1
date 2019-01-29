@@ -31,6 +31,8 @@ public class NewVocalCordsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_new_vocal_cords);
+        setTranslucentStatus(); // 顶部状态栏透明
+
 //        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.colorPrimary), true);
         if (Build.VERSION.SDK_INT >= 21) {
             View decorView = getWindow().getDecorView();
@@ -39,13 +41,15 @@ public class NewVocalCordsActivity extends BaseActivity {
         }
         Log.i("michael-onCreate", "主Activity");
 
+        int currentItem = getIntent().getIntExtra("default_select_item",3);
+
         mViewPager = (NoScrollViewPager) findViewById(R.id.vp_content);
         rgGroup = (RadioGroup) findViewById(R.id.rg_group);
         iv_rg = (ImageView) findViewById(R.id.iv_rg);
 
         mAdapter = new MyAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapter);
-        mViewPager.setCurrentItem(2, false);
+        mViewPager.setCurrentItem(currentItem, false);
 
         // 底栏标签切换监听
         rgGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -54,19 +58,19 @@ public class NewVocalCordsActivity extends BaseActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rb_talk:
-                        mViewPager.setCurrentItem(0, false);// 参2:表示是否具有滑动动画
+                        mViewPager.setCurrentItem(0, false);// 倾诉 参2:表示是否具有滑动动画
                         break;
                     case R.id.rb_voice:
-                        mViewPager.setCurrentItem(1, false);
+                        mViewPager.setCurrentItem(1, false);   // 心声带
                         break;
                     case R.id.rb_heart:
-                        mViewPager.setCurrentItem(2, false);
+                        mViewPager.setCurrentItem(2, false);   // 心室
                         break;
                     case R.id.rb_connect:
-                        mViewPager.setCurrentItem(3, false);
+                        mViewPager.setCurrentItem(3, false);   // 连线
                         break;
                     case R.id.rb_mine:
-                        mViewPager.setCurrentItem(4, false);
+                        mViewPager.setCurrentItem(4, false);   // 我
                         break;
 
                     default:

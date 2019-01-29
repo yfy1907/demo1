@@ -12,7 +12,8 @@
         android:background="#ECF0F2"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:visibility="gone">
         <EditText
             android:id="@+id/editUrl1"
             android:layout_width="fill_parent"
@@ -71,62 +72,156 @@
 
     </RelativeLayout>
 
+    <!-- tab的分割线 -->
+    <ImageView
+        android:id="@+id/tabTop"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#B6B6B6" />
+    <!-- tab的五个按钮 -->
     <LinearLayout
-        android:id="@+id/toolbar1"
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ECF0F2"
-        android:orientation="horizontal" >
-
-        <ImageButton
-            android:id="@+id/btnBack1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp" >
+        <!-- 按钮 -->
+        <!-- 使用FrameLayout，最主要的原因是使用它可以很容易的再添加一个消息提醒的小图片 -->
+        <FrameLayout
+            android:id="@+id/frame_talk"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2.5dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="#ECF0F2"
-            android:padding="10dp"
-            android:src="@drawable/theme_toolbar_btn_back_fg_normal0" />
+            android:paddingTop="3dp"
+            android:paddingBottom="2dp">
 
-        <ImageButton
-            android:id="@+id/btnForward1"
+            <ImageView
+                android:id="@+id/imageview_talk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:src="@drawable/talk" />
+
+            <TextView
+                android:id="@+id/textview_talk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_menu_1"
+                android:textColor="@color/orange"
+                android:layout_gravity="bottom|center"
+                android:textSize="12sp" />
+
+            <!--android:layout_gravity="bottom|center"-->
+
+        </FrameLayout>
+
+        <!-- 心声带 -->
+        <FrameLayout
+            android:id="@+id/frame_voice"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2.5dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="#ECF0F2"
-            android:padding="10dp"
-            android:src="@drawable/theme_toolbar_btn_forward_fg_normal0" />
+            android:paddingTop="3dp"
+            android:paddingBottom="2dp">
 
-        <ImageButton
-            android:id="@+id/btnMore"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2.0dp"
-            android:layout_weight="1"
-            android:background="#ECF0F2"
-            android:padding="10dp"
-            android:src="@drawable/theme_toolbar_btn_menu_fg_normal" />
+            <ImageView
+                android:id="@+id/imageview_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:src="@drawable/voice" />
 
-        <ImageButton
-            android:id="@+id/btnHome1"
+            <TextView
+                android:id="@+id/textview_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_menu_2"
+                android:textColor="#999999"
+                android:layout_gravity="bottom|center"
+                android:textSize="12sp" />
+        </FrameLayout>
+
+        <!-- 心室 -->
+        <FrameLayout
+            android:id="@+id/frame_heart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2.5dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="#ECF0F2"
-            android:padding="10dp"
-            android:src="@drawable/theme_toolbar_btn_home_fg_normal2" />
+            android:paddingTop="3dp"
+            android:paddingBottom="2dp">
 
-        <ImageButton
-            android:id="@+id/btnExit1"
+            <ImageView
+                android:id="@+id/imageview_heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:src="@drawable/heart"  />
+
+            <TextView
+                android:id="@+id/textview_heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_menu_3"
+                android:textColor="#999999"
+                android:layout_gravity="bottom|center"
+                android:textSize="12sp" />
+        </FrameLayout>
+
+        <!-- 连线 -->
+        <FrameLayout
+            android:id="@+id/frame_connect"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2.5dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="#ECF0F2"
-            android:padding="10dp"
-            android:src="@drawable/theme_menu_btn_quit_fg_normal0" />
+            android:paddingTop="3dp"
+            android:paddingBottom="2dp">
+
+            <ImageView
+                android:id="@+id/imageview_connect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:src="@drawable/heart"  />
+
+            <TextView
+                android:id="@+id/textview_connect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_menu_4"
+                android:textColor="#999999"
+                android:layout_gravity="bottom|center"
+                android:textSize="12sp" />
+        </FrameLayout>
+
+        <!-- 我按钮 -->
+        <FrameLayout
+            android:id="@+id/frame_layout_me"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:paddingTop="3dp"
+            android:paddingBottom="2dp">
+
+            <ImageView
+                android:id="@+id/imageview_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:src="@drawable/me" />
+
+            <TextView
+                android:id="@+id/textview_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_menu_5"
+                android:textColor="#999999"
+                android:layout_gravity="bottom|center"
+                android:textSize="12sp" />
+        </FrameLayout>
+
     </LinearLayout>
 
 </LinearLayout>

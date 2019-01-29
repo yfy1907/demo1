@@ -284,25 +284,25 @@ public class ChatRoomFragment extends BaseFragmentHome implements View.OnClickLi
 
     private void initImages() {
         for (int i = 0; i < 2; i++) {
-            Fruit apple = new Fruit("Apple", R.drawable.image_three);
+            Fruit apple = new Fruit("Apple", R.drawable.image_three, "chat");
             fruitList.add(apple);
-            Fruit banana = new Fruit("Banana", R.drawable.image_one);
+            Fruit banana = new Fruit("Banana", R.drawable.image_one, "chat");
             fruitList.add(banana);
-            Fruit orange = new Fruit("Orange", R.drawable.image_three);
+            Fruit orange = new Fruit("Orange", R.drawable.image_three, "chat");
             fruitList.add(orange);
-            Fruit watermelon = new Fruit("Watermelon", R.drawable.image_two);
+            Fruit watermelon = new Fruit("Watermelon", R.drawable.image_two, "chat");
             fruitList.add(watermelon);
-            Fruit pear = new Fruit("Pear", R.drawable.image_four);
+            Fruit pear = new Fruit("Pear", R.drawable.image_four, "chat");
             fruitList.add(pear);
-            Fruit grape = new Fruit("Grape", R.drawable.image_one);
+            Fruit grape = new Fruit("Grape", R.drawable.image_one, "chat");
             fruitList.add(grape);
-            Fruit pineapple = new Fruit("Pineapple", R.drawable.image_three);
+            Fruit pineapple = new Fruit("Pineapple", R.drawable.image_three, "chat");
             fruitList.add(pineapple);
-            Fruit strawberry = new Fruit("Strawberry", R.drawable.image_two);
+            Fruit strawberry = new Fruit("Strawberry", R.drawable.image_two, "chat");
             fruitList.add(strawberry);
-            Fruit cherry = new Fruit("Cherry", R.drawable.image_four);
+            Fruit cherry = new Fruit("Cherry", R.drawable.image_four, "chat");
             fruitList.add(cherry);
-            Fruit mango = new Fruit("Mango", R.drawable.image_one);
+            Fruit mango = new Fruit("Mango", R.drawable.image_one, "chat");
             fruitList.add(mango);
         }
     }

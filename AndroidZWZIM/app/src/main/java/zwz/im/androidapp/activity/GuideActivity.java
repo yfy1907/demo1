@@ -76,6 +76,7 @@ public class GuideActivity extends BaseActivity implements ViewPager.OnPageChang
     public void onPageScrolled(int i, float v, int i1) {
 
     }
+
     //页面滑动状态改变时调用
     @Override
     public void onPageScrollStateChanged(int i) {

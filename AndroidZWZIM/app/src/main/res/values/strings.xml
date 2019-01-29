@@ -1,6 +1,15 @@
 <resources>
-    <string name="app_name">ZWZ.IM</string>
+    <string name="app_name">知我者</string>
 
     <string name="into_main">进入主界面</string>
+
+    <string name="skin_title">皮肤</string>
+
+
+    <string name="main_menu_1">倾诉</string>
+    <string name="main_menu_2">心声带</string>
+    <string name="main_menu_3">心室</string>
+    <string name="main_menu_4">连线</string>
+    <string name="main_menu_5">我</string>
 
 </resources>

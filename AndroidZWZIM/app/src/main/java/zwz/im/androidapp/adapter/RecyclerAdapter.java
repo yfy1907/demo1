@@ -1,5 +1,4 @@
 package zwz.im.androidapp.adapter;
-
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -28,7 +27,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private List<Fruit> mData;
     private Context context;
-    private Map<Integer, Boolean> map = new HashMap<Integer, Boolean>();
+    private Map<Integer, Boolean> map = new HashMap<>();
 
     public enum Item_Type {
         RECYCLEVIEW_ITEM_TYPE_1,
@@ -38,12 +37,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         RECYCLEVIEW_ITEM_TYPE_5,
         RECYCLEVIEW_ITEM_TYPE_6,
         RECYCLEVIEW_ITEM_TYPE_7,
-        RECYCLEVIEW_ITEM_TYPE_8
+        RECYCLEVIEW_ITEM_TYPE_8,
+        RECYCLEVIEW_ITEM_TYPE_9
     }
 
     public RecyclerAdapter(Context context, List<Fruit> mData) {
         this.mData = mData;
         this.context = context;
+    }
+
+    private int selectedIndex;        //记录当前选中的条目索引
+
+    public void setSelectedIndex(int position) {
+        this.selectedIndex = position;
+        notifyDataSetChanged();
     }
 
 
@@ -77,19 +84,33 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ViewHolderE viewHolder = new ViewHolderE(mView);
             return viewHolder;
         } else if (viewType == Item_Type.RECYCLEVIEW_ITEM_TYPE_6.ordinal()) {
+            // 连线
             View mView = LayoutInflater.from(context).inflate(R.layout.recycle_item_f, parent, false);
             ViewHolderF viewHolder = new ViewHolderF(mView);
             return viewHolder;
         } else if (viewType == Item_Type.RECYCLEVIEW_ITEM_TYPE_7.ordinal()) {
+            // 连线列表
             View mView = LayoutInflater.from(context).inflate(R.layout.recycle_item_g, parent, false);
             ViewHolderG viewHolder = new ViewHolderG(mView);
             return viewHolder;
         } else if (viewType == Item_Type.RECYCLEVIEW_ITEM_TYPE_8.ordinal()) {
+            // 连线回复
             View mView = LayoutInflater.from(context).inflate(R.layout.recycle_item_h, parent, false);
             ViewHolderH viewHolder = new ViewHolderH(mView);
             return viewHolder;
+        } else if (viewType == Item_Type.RECYCLEVIEW_ITEM_TYPE_9.ordinal()) {
+            View mView = LayoutInflater.from(context).inflate(R.layout.recycle_item_i, parent, false);
+            final ViewHolderI viewHolder = new ViewHolderI(mView);
+            viewHolder.rl_skin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    viewHolder.skin_peeling.setVisibility(View.GONE);
+                    int position = viewHolder.getAdapterPosition();
+                    setSelectedIndex(position);
+                }
+            });
+            return viewHolder;
         }
-
         return null;
     }
 
@@ -111,7 +132,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         } else if (holder instanceof ViewHolderD) {
             ((ViewHolderD) holder).tv_topic.setText(mData.get(position).getName());
         } else if (holder instanceof ViewHolderE) {
-            ((ViewHolderE) holder).iv_photo.setImageResource(mData.get(position).getType());
+            ((ViewHolderE) holder).iv_photo.setImageResource(mData.get(position).getImageId());
             ((ViewHolderE) holder).cb_check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -133,6 +154,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             //((ViewHolderG) holder).tv_topic.setText(mData.get(position).getName());
         } else if (holder instanceof ViewHolderH) {
             //((ViewHolderH) holder).tv_topic.setText(mData.get(position).getName());
+        } else if (holder instanceof ViewHolderI) {
+            ((ViewHolderI) holder).title.setText(mData.get(position).getName());
+            ((ViewHolderI) holder).color.setImageResource(mData.get(position).getImageId());
+            if (selectedIndex == position) {
+                ((ViewHolderI) holder).skin_peeling.setVisibility(View.VISIBLE);
+            } else {
+                ((ViewHolderI) holder).skin_peeling.setVisibility(View.GONE);
+            }
         }
     }
 
@@ -140,22 +169,26 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     //返回值赋值给onCreateViewHolder的参数 viewType
     @Override
     public int getItemViewType(int position) {
-        if (mData.get(position).getType() == 0) {
+        if (mData.get(position).getImageId() == 0) {
             return Item_Type.RECYCLEVIEW_ITEM_TYPE_1.ordinal();
-        } else if (mData.get(position).getType() == 1) {
+        } else if (mData.get(position).getImageId() == 1) {
             return Item_Type.RECYCLEVIEW_ITEM_TYPE_2.ordinal();
-        } else if (mData.get(position).getType() == 2) {
+        } else if (mData.get(position).getImageId() == 2) {
             return Item_Type.RECYCLEVIEW_ITEM_TYPE_3.ordinal();
-        } else if (mData.get(position).getType() == 3) {
+        } else if (mData.get(position).getImageId() == 3) {
             return Item_Type.RECYCLEVIEW_ITEM_TYPE_4.ordinal();
-        } else if (mData.get(position).getType() == 5) {
+        } else if (mData.get(position).getImageId() == 5) {
             return Item_Type.RECYCLEVIEW_ITEM_TYPE_6.ordinal();
-        } else if (mData.get(position).getType() == 6) {
+        } else if (mData.get(position).getImageId() == 6) {
             return Item_Type.RECYCLEVIEW_ITEM_TYPE_7.ordinal();
-        } else if (mData.get(position).getType() == 7) {
+        } else if (mData.get(position).getImageId() == 7) {
             return Item_Type.RECYCLEVIEW_ITEM_TYPE_8.ordinal();
         } else {
-            return Item_Type.RECYCLEVIEW_ITEM_TYPE_5.ordinal();
+            if ("chat".equals(mData.get(position).getType())) {
+                return Item_Type.RECYCLEVIEW_ITEM_TYPE_5.ordinal();
+            } else {
+                return Item_Type.RECYCLEVIEW_ITEM_TYPE_9.ordinal();
+            }
         }
 //        return -1;
     }
@@ -260,6 +293,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             super(itemView);
             iv_photo = itemView.findViewById(R.id.iv_photo);
             cb_check = itemView.findViewById(R.id.cb_check);
+        }
+    }
+
+    class ViewHolderI extends RecyclerView.ViewHolder {
+        View rl_skin;
+        public TextView title;
+        public ImageView skin_peeling, color;
+
+        public ViewHolderI(View itemView) {
+            super(itemView);
+            rl_skin = itemView;
+            skin_peeling = itemView.findViewById(R.id.skin_peeling);
+            color = itemView.findViewById(R.id.color);
+            title = itemView.findViewById(R.id.title);
         }
     }
 }

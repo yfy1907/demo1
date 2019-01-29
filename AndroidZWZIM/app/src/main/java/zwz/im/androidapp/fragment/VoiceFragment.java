@@ -73,25 +73,25 @@ public class VoiceFragment extends BaseFragmentHome {
 
     private void initData() {
         for (int i = 0; i < 2; i++) {
-            Fruit apple = new Fruit("最近遇到很多烦心事，下面我和大家说说吧", 0);
+            Fruit apple = new Fruit("最近遇到很多烦心事，下面我和大家说说吧", 0, "voice");
             fruitList.add(apple);
-            Fruit banana = new Fruit("最长六字分类", 3);
+            Fruit banana = new Fruit("最长六字分类", 3, "voice");
             fruitList.add(banana);
-            Fruit orange = new Fruit("最近遇到很多烦心事，下面我和大家说说吧",0);
+            Fruit orange = new Fruit("最近遇到很多烦心事，下面我和大家说说吧",0, "voice");
             fruitList.add(orange);
-            Fruit watermelon = new Fruit("分享", 1);
+            Fruit watermelon = new Fruit("分享", 1, "voice");
             fruitList.add(watermelon);
-            Fruit pear = new Fruit("家庭", 2);
+            Fruit pear = new Fruit("家庭", 2, "voice");
             fruitList.add(pear);
-            Fruit grape = new Fruit("最长六字分类", 3);
+            Fruit grape = new Fruit("最长六字分类", 3, "voice");
             fruitList.add(grape);
-            Fruit pineapple = new Fruit("家庭", 2);
+            Fruit pineapple = new Fruit("家庭", 2, "voice");
             fruitList.add(pineapple);
-            Fruit strawberry = new Fruit("最近遇到很多烦心事，下面我和大家说说吧", 0);
+            Fruit strawberry = new Fruit("最近遇到很多烦心事，下面我和大家说说吧", 0, "voice");
             fruitList.add(strawberry);
-            Fruit cherry = new Fruit("最长六字分类", 3);
+            Fruit cherry = new Fruit("最长六字分类", 3, "voice");
             fruitList.add(cherry);
-            Fruit mango = new Fruit("分享", 1);
+            Fruit mango = new Fruit("分享", 1, "voice");
             fruitList.add(mango);
         }
     }

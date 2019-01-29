@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import zwz.im.androidapp.activity.NewVocalCordsActivity;
 import zwz.im.androidapp.activity.RegisterActivity;
 import zwz.im.androidapp.activity.SettingActivity;
 import zwz.im.androidapp.activity.base.BaseActivity;
@@ -36,6 +37,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        setTranslucentStatus(); // 顶部状态栏透明
         ButterKnife.bind(this);
         initViews();
     }
@@ -53,25 +55,38 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View view) {
+
+        Intent intent = null;
         switch (view.getId()) {
             case R.id.iv_avatar:
 
                 break;
 
             case R.id.tv_join_us:
+                // 加入我们
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class).putExtra("type", "join"));
                 break;
 
             case R.id.tv_forget_pwd:
+                // 忘记密码
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class).putExtra("type", "forget"));
                 break;
 
             case R.id.btn_see:
-                startActivity(new Intent(LoginActivity.this, SettingActivity.class));
+                // 先看看
+                intent = new Intent(this,NewVocalCordsActivity.class);
+                intent.putExtra("default_select_item",3);
+                startActivity(intent);
                 break;
 
             case R.id.btn_login:
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                // 进入
+                intent = new Intent(this,NewVocalCordsActivity.class);
+                intent.putExtra("default_select_item",2);
+
+//                intent = new Intent(this,MainActivity.class);
+
+                startActivity(intent);
                 break;
 
             case R.id.et_tel:

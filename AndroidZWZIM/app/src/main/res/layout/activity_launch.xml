@@ -21,12 +21,12 @@
     <Button
         android:id="@+id/guide_ib_start"
         android:layout_width="320dp"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:layout_below="@id/tv"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:text="进    入"
+        android:text=""
         android:textSize="18sp"
-        android:background="@drawable/btn_join"
+        android:background="@color/transparent"
         android:visibility="gone" />
 </RelativeLayout>

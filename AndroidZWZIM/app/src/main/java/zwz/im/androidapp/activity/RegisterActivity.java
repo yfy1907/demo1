@@ -13,8 +13,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import zwz.im.androidapp.MainActivity;
 import zwz.im.androidapp.R;
+import zwz.im.androidapp.activity.base.BaseActivity;
 
-public class RegisterActivity extends Activity implements View.OnClickListener {
+public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.iv_avatar)
     ImageView iv_avatar;
@@ -35,7 +36,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        setTranslucentStatus(); // 顶部状态栏透明
         ButterKnife.bind(this);
 
         initViews();
@@ -75,7 +76,8 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.btn_join:
-                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+//                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                startActivity(new Intent(RegisterActivity.this, NewVocalCordsActivity.class));
                 break;
 
             case R.id.verification_code:

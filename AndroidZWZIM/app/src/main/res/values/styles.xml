@@ -22,6 +22,11 @@
         <item name="colorAccent">@color/transparent</item>
     </style>
 
+    <style name="statusBarStyle" parent="@android:style/Theme.DeviceDefault.Light">
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/status_bar_color</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+    </style>
+
 
     <!--消除启动白屏-->
     <style name="MyStartTheme" parent="android:Theme.NoTitleBar.Fullscreen">
