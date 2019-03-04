@@ -37,7 +37,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        setTranslucentStatus(); // 顶部状态栏透明
+        setTranslucentStatus(this,R.color.heise); // 顶部状态栏透明
         ButterKnife.bind(this);
         initViews();
     }

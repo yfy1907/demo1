@@ -50,7 +50,7 @@ public class WelcomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        setTranslucentStatus(); // 顶部状态栏透明
+        setTranslucentStatus(this,R.color.heise); // 顶部状态栏透明
         init();
     }
     private void init(){

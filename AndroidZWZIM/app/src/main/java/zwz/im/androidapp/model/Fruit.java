@@ -1,5 +1,7 @@
 package zwz.im.androidapp.model;
 
+import java.util.List;
+
 public class Fruit {
 
     private String name;
@@ -8,10 +10,14 @@ public class Fruit {
 
     private String type;
 
-    public Fruit(String name, int imageId, String type) {
+    private List<Fruit> childList;
+
+    public Fruit(String name, int imageId, String type, List<Fruit> childList) {
         this.name = name;
         this.imageId = imageId;
+
         this.type = type;
+        this.childList = childList;
     }
 
     public String getType() {
@@ -37,4 +43,13 @@ public class Fruit {
     public void setImageId(int imageId) {
         this.imageId = imageId;
     }
+
+    public List<Fruit> getChildList() {
+        return childList;
+    }
+
+    public void setChildList(List<Fruit> childList) {
+        this.childList = childList;
+    }
+
 }

@@ -36,7 +36,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        setTranslucentStatus(); // 顶部状态栏透明
+        setTranslucentStatus(this,R.color.heise); // 顶部状态栏透明
         ButterKnife.bind(this);
 
         initViews();

@@ -1,5 +1,6 @@
 package zwz.im.androidapp.activity.base;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -238,7 +239,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
-    protected void setTranslucentStatus() {
+    protected void setTranslucentStatus(Activity activity, int colorId) {
         // 5.0以上系统状态栏透明
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -246,8 +247,13 @@ public class BaseActivity extends AppCompatActivity {
             window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN  | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.TRANSPARENT);
+
+            // 如果亮色，设置状态栏文字为黑色
+            window.setStatusBarColor(activity.getResources().getColor(colorId));
+
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
         }
     }
 }

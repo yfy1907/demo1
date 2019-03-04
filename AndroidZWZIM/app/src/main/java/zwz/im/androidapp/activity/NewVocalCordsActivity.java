@@ -31,8 +31,7 @@ public class NewVocalCordsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_new_vocal_cords);
-        setTranslucentStatus(); // 顶部状态栏透明
-
+        setTranslucentStatus(this,R.color.heise); // 顶部状态栏透明
 //        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.colorPrimary), true);
         if (Build.VERSION.SDK_INT >= 21) {
             View decorView = getWindow().getDecorView();

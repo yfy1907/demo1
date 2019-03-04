@@ -31,7 +31,7 @@ public class SkinActivity extends BaseActivity{
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_skin);
-        setTranslucentStatus(); // 顶部状态栏透明
+        setTranslucentStatus(this,R.color.heise); // 顶部状态栏透明
 
 //        if (Build.VERSION.SDK_INT >= 21) {
 //            View decorView = getWindow().getDecorView();
@@ -50,21 +50,21 @@ public class SkinActivity extends BaseActivity{
     }
 
     private void initData() {
-        Fruit apple = new Fruit("黄桃", R.drawable.skin_yellow_peach, "skin");
+        Fruit apple = new Fruit("黄桃", R.drawable.skin_yellow_peach, "skin",null);
         fruitList.add(apple);
-        Fruit banana = new Fruit("牛油果", R.drawable.skin_avocado, "skin");
+        Fruit banana = new Fruit("牛油果", R.drawable.skin_avocado, "skin",null);
         fruitList.add(banana);
-        Fruit orange = new Fruit("车厘子", R.drawable.skin_cherry, "skin");
+        Fruit orange = new Fruit("车厘子", R.drawable.skin_cherry, "skin",null);
         fruitList.add(orange);
-        Fruit watermelon = new Fruit("水蜜桃", R.drawable.skin_honey_peach, "skin");
+        Fruit watermelon = new Fruit("水蜜桃", R.drawable.skin_honey_peach, "skin",null);
         fruitList.add(watermelon);
-        Fruit pear = new Fruit("湖水", R.drawable.skin_lake, "skin");
+        Fruit pear = new Fruit("湖水", R.drawable.skin_lake, "skin",null);
         fruitList.add(pear);
-        Fruit grape = new Fruit("青草", R.drawable.skin_grass, "skin");
+        Fruit grape = new Fruit("青草", R.drawable.skin_grass, "skin",null);
         fruitList.add(grape);
-        Fruit pineapple = new Fruit("水墨", R.drawable.skin_ink, "skin");
+        Fruit pineapple = new Fruit("水墨", R.drawable.skin_ink, "skin",null);
         fruitList.add(pineapple);
-        Fruit strawberry = new Fruit("紫罗兰", R.drawable.skin_violet, "skin");
+        Fruit strawberry = new Fruit("紫罗兰", R.drawable.skin_violet, "skin",null);
         fruitList.add(strawberry);
     }
 }

@@ -1,7 +1,14 @@
 package zwz.im.androidapp.fragment;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,16 +18,24 @@ import android.view.ViewGroup;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.flyco.tablayout.SegmentTabLayout;
+import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.flyco.tablayout.widget.MsgView;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import zwz.im.androidapp.R;
 import zwz.im.androidapp.adapter.RecyclerAdapter;
 import zwz.im.androidapp.model.Fruit;
+import zwz.im.androidapp.utils.ViewFindUtils;
 
 
 public class ConnectFragment extends BaseFragmentHome {
 
+    private static final String TAG = "ConnectFragment";
     /**
      * 标志位，标志已经初始化完成
      */
@@ -30,13 +45,10 @@ public class ConnectFragment extends BaseFragmentHome {
      */
     private boolean mHasLoaded;
 
-    //private RecyclerView recyler_view;
-    private List<Fruit> fruitList = new ArrayList<Fruit>();
-    private List<Fruit> myReplyList = new ArrayList<Fruit>();
+    private String[] mTitles = {"我发布", "我回复"};
+    private SegmentTabLayout mTabLayout_1;
 
-    private TabHost tabhost;
-    private RecyclerView recyler_view1;
-    private RecyclerView recyler_view2;
+    private ArrayList<ConnectViewPageBaseFragment> mFragments = new ArrayList<>();
 
 
     @Nullable
@@ -46,7 +58,7 @@ public class ConnectFragment extends BaseFragmentHome {
         if (mView == null) {
             // 需要inflate一个布局文件 填充Fragment
             mView = inflater.inflate(R.layout.connect, container, false);
-            initData();
+
             initView();
             isPrepared = true;
             // 实现懒加载
@@ -65,95 +77,102 @@ public class ConnectFragment extends BaseFragmentHome {
      * 初始化控件
      */
     private void initView() {
-//        recyler_view = find(R.id.recycler_view);
-//        recyler_view.setLayoutManager(new LinearLayoutManager(getContext()));
-//        recyler_view.setAdapter(new RecyclerAdapter(getContext(), fruitList));
+//        for (String title : mTitles) {
+//            mFragments.add(SimpleCardFragment.getInstance("Switch ViewPager " + title));
+//        }
+        ConnectViewPageTopicFragment topicFragment = new ConnectViewPageTopicFragment();
+        Bundle bundle1 = new Bundle();
+        bundle1.putString("fragmentTitle", mTitles[0]);
+        topicFragment.setArguments(bundle1);
 
-        this.tabhost = find(R.id.mytab);
-        this.tabhost.setup();
+        ConnectViewPageReplyFragment replyFragment = new ConnectViewPageReplyFragment();
+        Bundle bundle2 = new Bundle();
+        bundle2.putString("fragmentTitle", mTitles[1]);
+        replyFragment.setArguments(bundle2);
 
-        recyler_view1 = find(R.id.recycler_view1);
-        recyler_view1.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyler_view1.setAdapter(new RecyclerAdapter(getContext(), fruitList));
+        mFragments.add(topicFragment);
+        mFragments.add(replyFragment);
 
-        recyler_view2 = find(R.id.recycler_view2);
-        recyler_view2.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyler_view2.setAdapter(new RecyclerAdapter(getContext(), myReplyList));
+        mTabLayout_1 = find(R.id.tablayout_connect);
+
+        initViewpageControl();
+
+        //设置未读消息红点
+        mTabLayout_1.showDot(2);
+        MsgView rtv_3_2 = mTabLayout_1.getMsgView(1);
+        if (rtv_3_2 != null) {
+            rtv_3_2.setBackgroundColor(Color.parseColor("#6D8FB0"));
+        }
 
 
-        View viewTopic = getLayoutInflater().inflate(R.layout.connect_tabwidget_style,null);
-        TextView textviewTopic = (TextView) viewTopic.findViewById(R.id.textview_tabname);
-        textviewTopic.setText("我发布");
-        View viewReply = getLayoutInflater().inflate(R.layout.connect_tabwidget_style,null);
-        TextView textviewReply = (TextView) viewReply.findViewById(R.id.textview_tabname);
-        textviewReply.setText("我回复");
-
-        this.tabhost.addTab(this.tabhost.newTabSpec("mytopic").setIndicator(viewTopic).setContent(R.id.recycler_view1));
-        this.tabhost.addTab(this.tabhost.newTabSpec("myreply").setIndicator(viewReply).setContent(R.id.recycler_view2));
-        this.tabhost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-            public void onTabChanged(String tabKey) {
-                tabhost.setCurrentTabByTag(tabKey);
-                if (tabKey.equals("mytopic")) {
-
-                } else {
-
-                }
-
-            }
-        });
 
     }
 
-    private void initData() {
-        for (int i = 0; i < 2; i++) {
-            Fruit apple = new Fruit("我发布的心声内容，最近心情很不好，我也不知道为什么,就是觉得每天过的不开心，学习很累，效果也不好，家里还批评我，心里真的很不舒服。", 5, "connect");
-            fruitList.add(apple);
-            Fruit watermelon = new Fruit("分享", 6, "connect");
-            fruitList.add(watermelon);
-            Fruit pear = new Fruit("家庭", 6, "connect");
-            fruitList.add(pear);
-            Fruit strawberry = new Fruit("最近遇到很多烦心事，下面我和大家说说吧", 6, "connect");
-            fruitList.add(strawberry);
-            Fruit cherry = new Fruit("最长六字分类", 6, "connect");
-            fruitList.add(cherry);
-            Fruit mango = new Fruit("分享", 6, "connect");
-            fruitList.add(mango);
 
+    private void initViewpageControl() {
+        final ViewPager viewpageConnect = find(R.id.viewpage_connect);
 
-            Fruit apple1 = new Fruit("我发布的心声内容，最近心情很不好，我也不知道为什么,就是觉得每天过的不开心，学习很累，效果也不好，家里还批评我，心里真的很不舒服。", 5, "connect");
-            fruitList.add(apple1);
-            Fruit watermelon1 = new Fruit("分享", 6, "connect");
-            fruitList.add(watermelon1);
-            Fruit pear1 = new Fruit("家庭", 6, "connect");
-            fruitList.add(pear1);
-            Fruit strawberry1 = new Fruit("最近遇到很多烦心事，下面我和大家说说吧", 6, "connect");
-            fruitList.add(strawberry1);
-            Fruit cherry1 = new Fruit("最长六字分类", 6, "connect");
-            fruitList.add(cherry1);
-            Fruit mango1 = new Fruit("分享", 6, "connect");
-            fruitList.add(mango1);
+        viewpageConnect.setAdapter(new MyPagerAdapter(getFragmentManager(), mFragments));
+
+        mTabLayout_1.setTabData(mTitles);
+        mTabLayout_1.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelect(int position) {
+                Log.e(TAG,"当前选中Layout："+position);
+                viewpageConnect.setCurrentItem(position);
+            }
+
+            @Override
+            public void onTabReselect(int position) {
+            }
+        });
+
+        viewpageConnect.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                Log.e(TAG,"当前选中 setCurrentTab ："+position);
+                mTabLayout_1.setCurrentTab(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        viewpageConnect.setCurrentItem(0);
+    }
+
+    private class MyPagerAdapter extends FragmentPagerAdapter {
+
+        private List<ConnectViewPageBaseFragment> childFragments;
+
+        public MyPagerAdapter(FragmentManager fm, List<ConnectViewPageBaseFragment> mChildFragments) {
+            super(fm);
+            this.childFragments = mChildFragments;
         }
 
-        for(int i=0; i < 2; i++){
-            Fruit banana = new Fruit("不要把事情都压在心里，把不开心大声的说出来，压在心里会越来越不开心。", 7, "connect");
-            myReplyList.add(banana);
-            Fruit orange = new Fruit("心情不好，和我好好聊聊吧，我也遇到过这种事情，感觉他很讨厌，每天都不好好工作，把办公室搞的乌烟瘴气，真不知道，这种人我该如何和他相处。",7, "connect");
-            myReplyList.add(orange);
-            Fruit pineapple = new Fruit("家庭", 7, "connect");
-            myReplyList.add(pineapple);
-            Fruit pineapple1 = new Fruit("家庭", 7, "connect");
-            myReplyList.add(pineapple1);
-            Fruit pineapple2 = new Fruit("家庭", 7, "connect");
-            myReplyList.add(pineapple2);
-            Fruit pineapple3 = new Fruit("家庭", 7, "connect");
-            myReplyList.add(pineapple3);
-            Fruit pineapple4 = new Fruit("家庭", 7, "connect");
-            myReplyList.add(pineapple4);
-            Fruit pineapple5 = new Fruit("家庭", 7, "connect");
-            myReplyList.add(pineapple5);
-            Fruit pineapple6 = new Fruit("家庭", 7, "connect");
-            myReplyList.add(pineapple6);
+        @Override
+        public int getCount() {
+            int ret = 0;
+            if(childFragments != null){
+                ret = childFragments.size();
+            }
+            return ret;
+        }
 
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return this.childFragments.get(position).getFragmentTitle();
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return this.childFragments.get(position);
         }
     }
 

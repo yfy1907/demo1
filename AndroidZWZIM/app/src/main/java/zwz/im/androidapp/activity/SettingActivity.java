@@ -45,6 +45,9 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+
+        setTranslucentStatus(this,R.color.heise); // 顶部状态栏透明
+
         ButterKnife.bind(this);
         initViews();
     }

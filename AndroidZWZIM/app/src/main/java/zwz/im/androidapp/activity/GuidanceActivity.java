@@ -25,7 +25,7 @@ public class GuidanceActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guidance);
-        setTranslucentStatus();// 设置导航栏透明
+        setTranslucentStatus(this,R.color.heise);// 设置导航栏透明
         videoView = (VideoView) this.findViewById(R.id.id_video);
         videoPath = getIntent().getStringExtra("VideoPath");
         Log.e("","## 加载视频路径："+videoPath);

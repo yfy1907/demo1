@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/dimen_5_dip">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/connect_item_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_4_dip"
+        android:layout_marginRight="@dimen/dimen_4_dip"
+        android:layout_marginTop="@dimen/dimen_2_dip"
+        android:layout_marginBottom="@dimen/dimen_2_dip"
+        android:foreground="?attr/selectableItemBackground"
+        android:elevation="6dp"
+        app:cardBackgroundColor="@color/light_yellow"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="6dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dimen_2_dip"
+            android:layout_marginBottom="@dimen/dimen_2_dip"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/connect_textview_item_title_topic"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/dimen_4_dip"
+                    android:paddingBottom="@dimen/dimen_4_dip"
+                    android:paddingLeft="@dimen/dimen_8_dip"
+                    android:text="我发布的心声内容，最近心情很不好，我也不知道为什么,就是觉得每天过的不开心，学习很累，效果也不好，家里还批评我，心里真的很不舒服。"
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/conn_avatar_big" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

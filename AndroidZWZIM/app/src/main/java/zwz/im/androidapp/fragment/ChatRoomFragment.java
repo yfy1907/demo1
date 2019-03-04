@@ -284,25 +284,25 @@ public class ChatRoomFragment extends BaseFragmentHome implements View.OnClickLi
 
     private void initImages() {
         for (int i = 0; i < 2; i++) {
-            Fruit apple = new Fruit("Apple", R.drawable.image_three, "chat");
+            Fruit apple = new Fruit("Apple", R.drawable.image_three, "chat",null);
             fruitList.add(apple);
-            Fruit banana = new Fruit("Banana", R.drawable.image_one, "chat");
+            Fruit banana = new Fruit("Banana", R.drawable.image_one, "chat",null);
             fruitList.add(banana);
-            Fruit orange = new Fruit("Orange", R.drawable.image_three, "chat");
+            Fruit orange = new Fruit("Orange", R.drawable.image_three, "chat",null);
             fruitList.add(orange);
-            Fruit watermelon = new Fruit("Watermelon", R.drawable.image_two, "chat");
+            Fruit watermelon = new Fruit("Watermelon", R.drawable.image_two, "chat",null);
             fruitList.add(watermelon);
-            Fruit pear = new Fruit("Pear", R.drawable.image_four, "chat");
+            Fruit pear = new Fruit("Pear", R.drawable.image_four, "chat",null);
             fruitList.add(pear);
-            Fruit grape = new Fruit("Grape", R.drawable.image_one, "chat");
+            Fruit grape = new Fruit("Grape", R.drawable.image_one, "chat",null);
             fruitList.add(grape);
-            Fruit pineapple = new Fruit("Pineapple", R.drawable.image_three, "chat");
+            Fruit pineapple = new Fruit("Pineapple", R.drawable.image_three, "chat",null);
             fruitList.add(pineapple);
-            Fruit strawberry = new Fruit("Strawberry", R.drawable.image_two, "chat");
+            Fruit strawberry = new Fruit("Strawberry", R.drawable.image_two, "chat",null);
             fruitList.add(strawberry);
-            Fruit cherry = new Fruit("Cherry", R.drawable.image_four, "chat");
+            Fruit cherry = new Fruit("Cherry", R.drawable.image_four, "chat",null);
             fruitList.add(cherry);
-            Fruit mango = new Fruit("Mango", R.drawable.image_one, "chat");
+            Fruit mango = new Fruit("Mango", R.drawable.image_one, "chat",null);
             fruitList.add(mango);
         }
     }

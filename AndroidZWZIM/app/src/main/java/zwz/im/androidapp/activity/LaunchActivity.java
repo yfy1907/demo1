@@ -44,7 +44,7 @@ public class LaunchActivity extends BaseActivity implements ViewPager.OnPageChan
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
 
-        setTranslucentStatus();
+        setTranslucentStatus(this,R.color.heise);
 
         ib_start = (Button)findViewById(R.id.guide_ib_start);
         ib_start.setOnClickListener(new View.OnClickListener() {

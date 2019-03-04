@@ -16,8 +16,8 @@
         android:id="@+id/iv_rg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:visibility="gone"
+        android:layout_marginBottom="3dp"
+        android:visibility="visible"
         android:layout_alignParentBottom="true"
         android:background="@drawable/rg_bottom"/>
 
@@ -28,7 +28,7 @@
         android:layout_alignParentBottom="true"
         android:gravity="center"
         android:visibility="visible"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:layout_gravity="center"

@@ -1,63 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mytab"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="连线印记"
+            android:textColor="#000"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/choose" />
+
+    </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical" >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <RelativeLayout
+        <com.flyco.tablayout.SegmentTabLayout
+            android:id="@+id/tablayout_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            tl:tl_bar_color="@color/white"
+            tl:tl_indicator_color="@color/heise"
+            tl:tl_indicator_corner_radius="8dp"
+            tl:tl_tab_padding="20dp"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpage_connect"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="连线印记"
-                android:textColor="#000"
-                android:textSize="30sp" />
-
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/choose" />
-
-        </RelativeLayout>
-
-        <TabWidget
-            android:id="@android:id/tabs"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:showDividers="none" />
-
-        <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="fill_parent"
-            android:layout_height="0.0dip"
-            android:layout_weight="1.0" >
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fitsSystemWindows="true" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fitsSystemWindows="true" />
-
-        </FrameLayout>
     </LinearLayout>
 
-</TabHost>
+
+</LinearLayout>
